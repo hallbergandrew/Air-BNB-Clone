@@ -8,5 +8,9 @@
 <p>Price: <%= @listing.price %></p>
 
 
+<h3> Hosted by: <%= @posting_user.name %> </h3>
+<p> <%= image_tag @posting_user.avatar.url(:thumb) %> </p>
+
+
 <%= link_to "Back", listings_path, :class => "btn btn-default" %>
 

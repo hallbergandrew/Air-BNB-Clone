@@ -1,2 +1,6 @@
-<li><%= link_to listing.title, listing_path(listing) %></a></li>
+<li><%= link_to listing.title, listing_path(listing) %></a>
+    <p> $ <%= listing.price %><br>
+    <%= listing.city %>, <%= listing.state %> </p>
+</li>
+
 
