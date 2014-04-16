@@ -11,7 +11,7 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.create(listing_params)
     respond_to do |format|
-      format.html { redirect_to listings_url }
+      format.html { redirect_to listings_url(@listing) }
       format.js
     end
   end
@@ -44,6 +44,6 @@ class ListingsController < ApplicationController
 
   private
   def listing_params
-    params.require(:listing).permit(:title, :description, :address, :city, :state, :zipcode, :price, :user_id)
+    params.require(:listing).permit(:title, :description, :address, :city, :state, :zipcode, :price, :user_id, :id)
   end
 end

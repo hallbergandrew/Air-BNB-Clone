@@ -2,6 +2,11 @@
 <h1> AirBnB Listings </h1>
 
 <h1><%= @listing.title %></h1>
+<ul>
+<% @listing.listing_photos.each do |listing_photo| %>
+  <%= image_tag listing_photo.photo(:medium) %>
+ <% end %>
+ </ul>
 <p>Description: <%= @listing.description %></p>
 <p>City: <%= @listing.city %></p>
 <p>State: <%= @listing.state %></p>
@@ -11,6 +16,10 @@
 <h3> Hosted by: <%= @posting_user.name %> </h3>
 <p> <%= image_tag @posting_user.avatar.url(:thumb) %> </p>
 
+<% if current_user.id == @listing.user_id %>
+
+  <%= link_to "Add Pictures", new_listing_photo_path(:listing_id => @listing.id), :class => "btn btn-default" %>
+<% end %>
 
 <%= link_to "Back", listings_path, :class => "btn btn-default" %>
 
