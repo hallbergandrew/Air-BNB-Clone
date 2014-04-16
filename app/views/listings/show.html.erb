@@ -1,0 +1,12 @@
+<% content_for(:title, "Your Listing | BonnieBNB") %>
+<h1> AirBnB Listings </h1>
+
+<h1><%= @listing.title %></h1>
+<p>Description: <%= @listing.description %></p>
+<p>City: <%= @listing.city %></p>
+<p>State: <%= @listing.state %></p>
+<p>Price: <%= @listing.price %></p>
+
+
+<%= link_to "Back", listings_path, :class => "btn btn-default" %>
+

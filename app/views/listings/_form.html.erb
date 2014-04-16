@@ -24,6 +24,10 @@
       <%= f.label :zipcode %></br>
       <%= f.text_field :zipcode %>
     </div>
+     <div class="form-group">
+      <%= f.label :price  %></br>
+      <%= f.text_field :price %>
+    </div>
     <div class="form-group">
       <%= f.hidden_field :user_id, :value => current_user.id %></br>
       <%= f.submit(:class => "btn btn-primary") %>
