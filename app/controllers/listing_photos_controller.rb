@@ -1,12 +1,12 @@
 class ListingPhotosController < ApplicationController
 
 def new
-  @listing_photo = Listing_photo.new
+  @listing_photo = ListingPhoto.new
   @listing = Listing.find(params[:listing_id])
  end
 
 def create
-  @listing_photo = Listing_photo.new( listing_photo_params )
+  @listing_photo = ListingPhoto.new( listing_photo_params )
     if @listing_photo.save
       redirect_to listing_url(@listing_photo.listing_id)
     else

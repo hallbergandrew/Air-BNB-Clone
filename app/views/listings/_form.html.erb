@@ -28,12 +28,6 @@
       <%= f.label :price  %></br>
       <%= f.text_field :price %>
     </div>
-    <%= form_for @listing_photo, :html => { :multipart => true}, remote: true do |f| %>
-    <div class="form-group">
-    <%= f.file_field :photo %>
-    <%= f.hidden_field :listing_id, :value => @listing.id %></br>
-    </div>
-    <% end %>
     <div class="form-group">
       <%= f.hidden_field :user_id, :value => current_user.id %></br>
       <%= f.submit(:class => "btn btn-primary") %>
