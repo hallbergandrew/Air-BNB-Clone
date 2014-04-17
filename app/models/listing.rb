@@ -5,7 +5,7 @@ class Listing < ActiveRecord::Base
 
   def self.text_search(query)
     if query.present?
-      where("title ilike :q or description ilike :q", q: "%#{query}")
+      where("title @@ :q or description @@ :q or state @@ :q or city @@ :q", q: query)
     else
       scoped
     end
