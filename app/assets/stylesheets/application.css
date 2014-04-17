@@ -12,3 +12,16 @@
  *= require_self
  *= require_tree .
  */
+.thumbnail-image {
+overflow: hidden;
+text-align: center;
+height: 50%;
+}
+
+.thumbnail-image > img {
+    width: 75%;
+}
+
+.thumbnail {
+  height: 300px;
+}

@@ -1,9 +1,15 @@
-<li><%= link_to listing.title, listing_path(listing) %></a>
-    <p> $ <%= listing.price %><br>
-    <%= listing.city %>, <%= listing.state %> </p>
-    <% if listing.listing_photos.first != nil %>
-      <%= image_tag listing.listing_photos.first.photo(:medium) %>
-    <% end %>
-</li>
 
+  <div class="col-xs-3 col-sm-3 col-md-4">
+    <div class="thumbnail">
+    <% if listing.listing_photos.first != nil %>
+    <div class="thumbnail-image">
+      <%= image_tag listing.listing_photos.first.photo %>
+    </div>
+    <% end %>
+
+        <h5><%= link_to listing.title, listing_path(listing) %></h5>
+        <p><%= listing.city %>, <%= listing.state %></p>
+        <p><%= link_to "More Info", listing_path(listing), :class => "btn btn-xs btn-primary" %>
+      </div>
+  </div>
 
