@@ -6,4 +6,11 @@ class ListingPhoto < ActiveRecord::Base
 
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
+  # validates_presense_of :photo
+
+  before_save :capitalize_all
+
+  def capitalize_all
+    self.caption.capitalize!
+  end
 end
