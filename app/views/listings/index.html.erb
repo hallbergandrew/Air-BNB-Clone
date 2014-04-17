@@ -1,6 +1,14 @@
 <% content_for(:title, "Listings | BonnieBNB") %>
 <h1> AirBnB Listings </h1>
 
+<%= form_tag listings_path, method: :get do %>
+  <p>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search", name: nil %>
+  <p>
+<% end %>
+
+
  <div class="row">
   <ul class="thumbnails">
  <div class = "listings">
@@ -13,3 +21,5 @@
 <% if user_signed_in? %>
 <%= link_to "New Listing", new_listing_path(:user_id => current_user.id), :class => "btn btn-default" %>
 <% end %>
+
+<%= will_paginate @listings %>

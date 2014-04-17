@@ -1,8 +1,7 @@
 class ListingsController < ApplicationController
   before_filter :authenticate_user!, except: [:index]
   def index
-    @listings = Listing.all
-
+    @listings = Listing.text_search(params[:query]).page(params[:page]).per_page(9)
   end
 
   def new
@@ -52,4 +51,8 @@ class ListingsController < ApplicationController
   def listing_params
     params.require(:listing).permit( :title, :description, :address, :city, :state, :zipcode, :price, :user_id, :id, :listing_photos_attributes => [:id, :caption, :listing_id, :photo])
   end
+
+  # def query_params
+  #   params.require(:query).permit(:title, :description)
+  # end
 end
