@@ -19,10 +19,18 @@
 
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+
+            <%= form_tag listings_path, method: :get do %>
+
+              <%= text_field_tag :query, params[:query], :class => "form-control" %>
           </div>
-          <button type="submit" class="btn btn-default">Search</button>
-        </form>
+              <%= submit_tag "Search", name: nil, :class => "btn btn-info" %>
+
+            <% end %>
+
+
+
+
     <% if user_signed_in? %>
         <ul class="nav navbar-nav">
           <li><%= link_to "New Listing", new_listing_path(:user_id => current_user.id) %> </li>
@@ -52,8 +60,9 @@
   </div>
 </div>
 
-
+<div class="jumbotron">
 <%= yield %>
+</div>
 </div>
 </body>
 </html>

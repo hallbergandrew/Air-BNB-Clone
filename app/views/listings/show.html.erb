@@ -1,6 +1,5 @@
+
 <% content_for(:title, "Your Listing | BonnieBNB") %>
-
-
 <h1><%= @listing.title %></h1>
 <ul>
 <% @listing.listing_photos.each do |listing_photo| %>
@@ -13,6 +12,7 @@
 <p>Price: <%= @listing.price %></p>
 
 
+
 <h3> Hosted by: <%= @posting_user.name %> </h3>
 <p> <%= image_tag @posting_user.avatar.url(:thumb) %> </p>
 
@@ -21,5 +21,5 @@
   <%= link_to "Add Pictures", new_listing_photo_path(:listing_id => @listing.id), :class => "btn btn-default" %>
 <% end %>
 
-<%= link_to "Back", listings_path, :class => "btn btn-default" %>
+<%= link_to "Back", listings_path, :class => "btn btn-primary" %>
 
