@@ -1,14 +1,6 @@
 <% content_for(:title, "Listings | BonnieBNB") %>
-<h1> AirBnB Listings </h1>
 
-<%= form_tag listings_path, method: :get do %>
-  <p>
-    <%= text_field_tag :query, params[:query] %>
-    <%= submit_tag "Search", name: nil %>
-  <p>
-<% end %>
-
-
+<div class="jumbotron">
  <div class="row">
   <ul class="thumbnails">
  <div class = "listings">
@@ -20,4 +12,5 @@
 </div>
 <div class="pagination">
 <%= will_paginate @listings %>
+</div>
 </div>

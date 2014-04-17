@@ -12,7 +12,26 @@
  *= require_self
  *= require_tree .
  */
- body {
+ .logged-in {
+  text-align: right;
+  color: black;
+ }
+ .btn-primary {
+  text-align: center;
+ }
+ .thumbnails {
+  text-align: center;
+ }
+ .search{
+  text-align: left;
+ }
+
+ .well-lg {
+  text-align: center;
+  font-family: helvetica;
+
+ }
+ body {background-image:url(http://i.imgur.com/8gQKBKI.png);
   padding: 40px;
  }
 
