@@ -12,6 +12,14 @@
  *= require_self
  *= require_tree .
  */
+ body {
+  padding: 40px;
+ }
+
+ .current_user_nav {
+  color: white;
+  border: 1px;
+ }
 .thumbnail-image {
 overflow: hidden;
 text-align: center;

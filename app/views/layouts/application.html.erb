@@ -7,17 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= flash[:alert] %>
+<%= flash[:notice] %>
   <div class="container">
-  <div id="user_nav">
+  <div class="navbar navbar-inverse navbar-embossed" role="navigation">
+    <div class="navbar-header">
+      <ul class="nav navbar-nav navbar-left">
+    <li> <a class="brand" href="/"> AirBNB </a></li>
     <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path %> |
-      <%= link_to "Login", new_user_session_path %>
+      <li><%= link_to "New Listing", new_listing_path(:user_id => current_user.id), :class => "btn btn-primary" %> </li>
+      <li><%= link_to 'Edit profile', edit_user_registration_path,:class => "btn btn-primary" %> </li>
+    </ul>
+     <ul class="nav navbar-nav navbar-right">
+       <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "btn btn-primary" %></li>
+       <li><p class="current_user_nav">Logged in as <strong><%= current_user.email %></strong>.</p></li>
+    </ul>
+    <% else %> </li>
+      <li><%= link_to "Sign up", new_user_registration_path,:class => "btn btn-primary" %></li>
+      <li><%= link_to "Login", new_user_session_path,:class => "btn btn-primary" %></li>
     <% end %>
+  </ul>
   </div>
+</div>
 
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, id: "flash_#{name}" %>
