@@ -22,11 +22,12 @@
 
             <%= form_tag listings_path, method: :get do %>
 
-              <%= text_field_tag :query, params[:query], :class => "form-control" %>
+              <%= text_field_tag :query, params[:query], :class => "form-control", :placeholder => "Where are you going?" %>
           </div>
               <%= submit_tag "Search", name: nil, :class => "btn btn-info" %>
 
             <% end %>
+        </form>
 
 
 
