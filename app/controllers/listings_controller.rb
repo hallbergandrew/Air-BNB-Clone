@@ -2,18 +2,24 @@ class ListingsController < ApplicationController
   before_filter :authenticate_user!, except: [:index]
   def index
     @listings = Listing.all
+
   end
 
   def new
     @listing = Listing.new
+    @listing.listing_photos.build
   end
 
   def create
-    @listing = Listing.create(listing_params)
-    respond_to do |format|
-      format.html { redirect_to listings_url }
-      format.js
+    @listing = Listing.new(listing_params)
+    if @listing.save
+      redirect_to listings_url
+    else
+      render 'new'
     end
+    # respond_to do |format|
+    #   format.html { redirect_to listings_url }
+    #   format.js
   end
 
   def edit
@@ -44,6 +50,6 @@ class ListingsController < ApplicationController
 
   private
   def listing_params
-    params.require(:listing).permit(:title, :description, :address, :city, :state, :zipcode, :price, :user_id, :id, :photo)
+    params.require(:listing).permit( :title, :description, :address, :city, :state, :zipcode, :price, :user_id, :id, :listing_photos_attributes => [:id, :caption, :listing_id, :photo])
   end
 end

@@ -1,5 +1,5 @@
 <div class="listing-form">
-  <%= form_for @listing, :html => { :multipart => true }, remote: true do |f| %>
+  <%= form_for @listing, :html => { :multipart => true } do |f| %>
     <div class="form-group">
       <%= f.label :title %></br>
       <%= f.text_field :title %>
@@ -29,7 +29,19 @@
       <%= f.text_field :price %>
     </div>
     <div class="form-group">
-      <%= f.hidden_field :user_id, :value => current_user.id %></br>
+     <%= f.hidden_field :user_id, :value => current_user.id %></br>
+   </div>
+   <%= f.fields_for :listing_photos do |x| %>
+     <div class="form-group">
+        <%= x.label :caption %></br>
+        <%= x.text_field :caption %>
+      </div>
+      <div class="form-group">
+        <%= x.label :photo %></br>
+        <%= x.file_field :photo %>
+      </div>
+    <% end %>
+    <div class="form-group">
       <%= f.submit(:class => "btn btn-primary") %>
     </div>
 

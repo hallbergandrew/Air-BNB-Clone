@@ -7,11 +7,16 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 gem 'paperclip'
 gem 'less-rails-bootstrap'
 gem 'therubyracer'
 gem 'bcrypt'
 gem 'devise'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'twilio-ruby'
+gem 'remotipart'
+gem "nested_form"
 
 
 group :development do
