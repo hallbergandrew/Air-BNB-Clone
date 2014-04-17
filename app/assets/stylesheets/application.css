@@ -67,3 +67,11 @@ text-align: left;
 
 background-color: rgba(188, 213, 220, 0.83);
 }
+
+.truncate {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: teal;
+}

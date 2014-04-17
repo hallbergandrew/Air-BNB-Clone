@@ -7,7 +7,7 @@
     </div>
     <% end %>
 
-        <h6><%= link_to listing.title, listing_path(listing) %></h6>
+        <h6 class="truncate"><%= link_to listing.title, listing_path(listing) %></h6>
         <p><%= listing.city %>, <%= listing.state %></p>
         <p><%= link_to "More Info", listing_path(listing), :class => "btn btn-xs btn-primary" %>
       </div>
