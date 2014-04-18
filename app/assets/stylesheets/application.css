@@ -75,3 +75,7 @@ background-color: rgba(188, 213, 220, 0.83);
   text-overflow: ellipsis;
   color: teal;
 }
+
+.black {
+  color: #95A5A6;
+}

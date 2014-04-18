@@ -5,7 +5,9 @@
 
 # To Do
 * Add Reviews
-* Add Search -textacular
+*DONE Add Search -textacular
 * Add UserProfile View page
-* Add Pagination - will_paginate or Kaminari
+* DONE Add Pagination -will_paginate
 * Add Calendar
+* Add Mail Confirm
+* Add Email/Reply

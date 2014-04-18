@@ -3,12 +3,12 @@
     <div class="thumbnail">
     <% if listing.listing_photos.first != nil %>
     <div class="thumbnail-image">
-      <%= image_tag listing.listing_photos.first.photo %>
+      <%= link_to image_tag(listing.listing_photos.first.photo), listing_path(listing) %>
     </div>
     <% end %>
 
         <h6 class="truncate"><%= link_to listing.title, listing_path(listing) %></h6>
-        <p><%= listing.city %>, <%= listing.state %></p>
+        <p><%= link_to listing.city, listing_path(listing), :class => "black" %>, <%= link_to listing.state, listing_path(listing), :class => "black" %></p>
         <p><%= link_to "More Info", listing_path(listing), :class => "btn btn-xs btn-primary" %>
       </div>
   </div>
