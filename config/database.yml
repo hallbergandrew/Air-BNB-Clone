@@ -1,10 +1,21 @@
-
 development:
   adapter: postgresql
-  database: airbnb_clone_development
+  encoding: unicode
+  database: myapp_development
+  pool: 5
+  username: myapp
+  password:
 test:
   adapter: postgresql
-  database: airbnb_clone_test
+  encoding: unicode
+  database: myapp_test
+  pool: 5
+  username: myapp
+  password:
 production:
   adapter: postgresql
-  database: trash_production
+  encoding: unicode
+  database: myapp_production
+  pool: 5
+  username: myapp
+  password:
