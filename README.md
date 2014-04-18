@@ -1,6 +1,7 @@
 # Air BnB Clone
 
-## This app allows users to create new house listings, browse all house listings, and contact one another with their interest in renting.
+## This app allows users to create new house listings, browse all house listings, **and contact one another with their interest in renting.
+      **still under construction
 
 
 # To Do
