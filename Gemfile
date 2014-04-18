@@ -20,6 +20,9 @@ gem "nested_form"
 gem 'textacular'
 gem 'will_paginate'
 
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development do
   gem 'better_errors'
