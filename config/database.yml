@@ -7,8 +7,4 @@ test:
   database: airbnb_clone_test
 production:
   adapter: postgresql
-  encoding: unicode
   database: trash_production
-  pool: 5
-  username: trash
-  password:
