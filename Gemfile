@@ -14,7 +14,6 @@ gem 'therubyracer'
 gem 'bcrypt'
 gem 'devise'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-gem 'twilio-ruby'
 gem 'remotipart'
 gem "nested_form"
 gem 'textacular'
